@@ -28,6 +28,6 @@ http://localhost:8080/h2-console
 
 **MINIKUBE SETUP**
 1. Start minikube command: "minikube start"
-2. Build docker image command: "minikube image build product"
+2. Build docker image command: "minikube image load scalable-services/product-service-spring-boot-docker"
 3. Run deployment.yaml file command: "kubectl apply -f deployment.yaml"
 4. Run the image in port command: "kubectl port-forward deployment/product 9002:9002"
