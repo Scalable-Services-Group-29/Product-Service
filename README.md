@@ -25,3 +25,9 @@ http://localhost:8080/h2-console
 1. Use gradle -> build to build the jar file for the ProductService
 2. Run "docker build --build-arg JAR_FILE=build/libs/Product-Service-0.0.1-SNAPSHOT.jar -t scalable-services/product-service-spring-boot-docker ." command in the terminal to create the docker image for product service
 3. Run "docker run -p 9002:9002 -t scalable-services/product-service-spring-boot-docker" command to run the docker image which was created in previous step
+
+**MINIKUBE SETUP**
+1. Start minikube command: "minikube start"
+2. Build docker image command: "minikube image build product"
+3. Run deployment.yaml file command: "kubectl apply -f deployment.yaml"
+4. Run the image in port command: "kubectl port-forward deployment/product 9002:9002"
