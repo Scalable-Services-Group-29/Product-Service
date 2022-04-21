@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: product
+  labels:
+    name: product
+spec:
+  selector:
+    matchLabels:
+      name: product
+  template:
+    metadata:
+      labels:
+        name: product
+    spec:
+      containers:
+        - name: product
+          image: scalable-services/product-service-spring-boot-docker
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 9002
